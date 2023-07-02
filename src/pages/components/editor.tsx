@@ -14,10 +14,10 @@ import Sk from "skulpt";
 import Chat from "./chat";
 import {
   TrashIcon,
-  FolderDownloadIcon,
+  FolderIcon,
   PlayIcon,
-  TerminalIcon,
-  CodeIcon,
+  CommandLineIcon,
+  CodeBracketIcon,
   CheckIcon,
 } from "@heroicons/react/24/solid";
 
@@ -189,7 +189,7 @@ export default function CodeEditor() {
       <div className="grid grid-cols-5 gap-0">
         <div className="overlay shadow-4xl col-span-3  flex h-full max-h-[calc(100vh-3.6rem)] min-h-[calc(100vh-3.6rem)] w-full flex-col overflow-hidden border-r border-gray-600">
           <div className="flex w-full flex-row items-center border-b border-gray-600 bg-gray-100 py-1 px-2  text-gray-800 dark:bg-gray-800 dark:text-gray-400">
-            <CodeIcon className="mr-2 h-5 w-5" />
+            <CodeBracketIcon className="mr-2 h-5 w-5" />
             <input
               onChange={(e) => setTitle(e.target.value)}
               value={title}
@@ -226,7 +226,7 @@ export default function CodeEditor() {
                 className="my-1 mr-1 flex items-center justify-center rounded-lg border border-gray-300 bg-white p-1 text-gray-900 duration-150 hover:bg-gray-100 hover:text-gpt dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-900 dark:hover:text-gptDark"
                 onClick={handleDownload}
               >
-                <FolderDownloadIcon className="h-5 w-5" />
+                <FolderIcon className="h-5 w-5" />
               </button>
             </div>
           </div>
@@ -276,7 +276,7 @@ export default function CodeEditor() {
         <div className="col-span-2 flex max-h-[calc(100vh-3.6rem)] min-h-[calc(100vh-3.6rem)] w-full  flex-col overflow-hidden bg-gray-300 bg-opacity-10 dark:bg-gray-900 dark:bg-opacity-10">
           <div className="flex w-full flex-row items-center border-b border-gray-600 bg-gray-100 py-1 px-2 text-gray-800 dark:bg-gray-800 dark:text-gray-400">
             <div className="flex items-center text-lg font-semibold">
-              <TerminalIcon className="mr-2 inline h-6 w-6" /> Console
+              <CommandLineIcon className="mr-2 inline h-6 w-6" /> Console
             </div>
             <button
               className="m-1 ml-auto flex items-center justify-center rounded-lg border border-gray-300 bg-white p-1 text-gray-900 duration-150 hover:bg-gray-100 hover:text-red-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-900 dark:hover:text-red-500"
@@ -288,7 +288,7 @@ export default function CodeEditor() {
               className="my-1 mr-1 flex items-center justify-center rounded-lg border border-gray-300 bg-white p-1 text-gray-900 duration-150 hover:bg-gray-100 hover:text-gpt dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-900 dark:hover:text-gptDark"
               onClick={handleConsoleDownload}
             >
-              <FolderDownloadIcon className="h-5 w-5" />
+              <FolderIcon className="h-5 w-5" />
             </button>
           </div>
           <div className="shadow-4xl scrollbar h-full w-full overflow-x-hidden overflow-y-scroll text-green-300">

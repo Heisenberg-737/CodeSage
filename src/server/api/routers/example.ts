@@ -1,9 +1,10 @@
 import { z } from "zod";
+
 import {
   createTRPCRouter,
   publicProcedure,
   protectedProcedure,
-} from "codesage/server/api/trpc";
+} from "../../../server/api/trpc";
 
 export const exampleRouter = createTRPCRouter({
   hello: publicProcedure
@@ -13,11 +14,12 @@ export const exampleRouter = createTRPCRouter({
         greeting: `Hello ${input.text}`,
       };
     }),
-
-  getAll: publicProcedure.query(({ ctx }) => {
-    return ctx.prisma.example.findMany();
-  }),
-
+  // create: protectedProcedure
+  //   .input(z.object({ text: z.string() }))
+  //   .mutation(async ({ input, ctx }) => {
+  //     const { text } = input;
+  //     //firebase stuff
+  //   }),
   getSecretMessage: protectedProcedure.query(() => {
     return "you can now see this secret message!";
   }),

@@ -1,4 +1,3 @@
-import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { type GetServerSidePropsContext } from "next";
 import {
   getServerSession,
@@ -6,9 +5,11 @@ import {
   type DefaultSession,
 } from "next-auth";
 import DiscordProvider from "next-auth/providers/discord";
-import { env } from "codesage/env.mjs";
-import { prisma } from "codesage/server/db";
+import GoogleProvider from "next-auth/providers/google";
+// import {FireStoreAdapter} from "next-auth/firestore-adapter";
 
+// import {firestore} from "~/server/db"
+import { env } from "../env.mjs";
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
  * object and keep type safety.
@@ -37,19 +38,23 @@ declare module "next-auth" {
  */
 export const authOptions: NextAuthOptions = {
   callbacks: {
-    session: ({ session, user }) => ({
-      ...session,
-      user: {
-        ...session.user,
-        id: user.id,
-      },
-    }),
+    // session({ session, user }) {
+    //   if (session.user) {
+    //     session.user.name = user.name;
+    //     // session.user.role = user.role; <-- put other properties on the session here
+    //   }
+    //   return session;
+    // },
   },
-  adapter: PrismaAdapter(prisma),
+  // adapter: FireStoreAdapter(firestore),
   providers: [
     DiscordProvider({
       clientId: env.DISCORD_CLIENT_ID,
       clientSecret: env.DISCORD_CLIENT_SECRET,
+    }),
+    GoogleProvider({
+      clientId: env.GOOGLE_CLIENT_ID,
+      clientSecret: env.GOOGLE_CLIENT_SECRET,
     }),
     /**
      * ...add more providers here.
@@ -61,6 +66,11 @@ export const authOptions: NextAuthOptions = {
      * @see https://next-auth.js.org/providers/github
      */
   ],
+  theme: {
+    colorScheme: "auto", // "auto" | "dark" | "light"
+    brandColor: "", // Hex color code #33FF5D
+    logo: "/images/logo.svg", // Absolute URL to image
+  },
 };
 
 /**

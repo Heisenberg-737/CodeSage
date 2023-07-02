@@ -1,18 +1,23 @@
+import { type AppType } from "next/app";
 import { type Session } from "next-auth";
 import { SessionProvider } from "next-auth/react";
-import { type AppType } from "next/app";
-import { api } from "codesage/utils/api";
-import "codesage/styles/globals.css";
+import { ThemeProvider } from "next-themes";
+import { api } from "../utils/api";
 
-const MyApp: AppType<{ session: Session | null }> = ({
+import "../styles/globals.css";
+
+const App: AppType<{ session: Session | null }> = ({
   Component,
   pageProps: { session, ...pageProps },
 }) => {
   return (
-    <SessionProvider session={session}>
-      <Component {...pageProps} />
-    </SessionProvider>
+    <ThemeProvider enableSystem={true} attribute="class">
+      <SessionProvider session={session}>
+        <Component {...pageProps} />
+      </SessionProvider>
+    </ThemeProvider>
   );
 };
 
-export default api.withTRPC(MyApp);
+export default api.withTRPC(App);
+// export default MyApp;

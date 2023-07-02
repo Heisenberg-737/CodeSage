@@ -39,9 +39,9 @@ export default function Chat(props: { code: string }) {
               "\n My code: " +
               props.code +
               "\nMy first prompt:" +
-              history.slice(-2)?.[0]?.[1] || ""+
-              "\n Your first response:" +
               (history.slice(-2)?.[0]?.[1] || "") +
+              "\n Your first response:" +
+              (history.slice(-2)?.[1]?.[1] || "") +
               "\n My new prompt:" +
               message +
               "\n Your new response:"
@@ -52,7 +52,7 @@ export default function Chat(props: { code: string }) {
           model: "gpt-3.5-turbo",
           messages: [{ role: "user", content: context }],
           temperature: 1,
-          max_tokens: 256,
+          max_tokens: 128,
           top_p: 1,
           frequency_penalty: 0,
           presence_penalty: 0,
@@ -63,7 +63,7 @@ export default function Chat(props: { code: string }) {
           [
             // with a new array
             ...history, // that contains all the old items
-            ["EditorGPT", completion?.data?.choices[0]?.message?.content || ""], // and one new item at the end
+            ["CodeSage", completion?.data?.choices[0]?.message?.content || ""], // and one new item at the end
           ]
         );
       }
@@ -137,7 +137,7 @@ export default function Chat(props: { code: string }) {
               Use{" "}
               <span className="mx-[0.38rem] text-gptDarker dark:text-gpt">
                 {" "}
-                EditorGPT{" "}
+                CodeSage{" "}
               </span>{" "}
               to Analyze your Code
             </p>
@@ -184,7 +184,7 @@ export default function Chat(props: { code: string }) {
                     </div>
 
                     <div className="mt-2 text-sm text-gray-700 dark:text-gray-300">
-                      {msg[0] == "EditorGPT" || msg[0] == "gpt-4" ? (
+                      {msg[0] == "CodeSage" || msg[0] == "gpt-4" ? (
                         <Typewriter
                           options={{
                             loop: false,

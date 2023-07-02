@@ -7,14 +7,6 @@
  * need to use are documented accordingly near the end.
  */
 
-import { initTRPC, TRPCError } from "@trpc/server";
-import { type CreateNextContextOptions } from "@trpc/server/adapters/next";
-import { type Session } from "next-auth";
-import superjson from "superjson";
-import { ZodError } from "zod";
-import { getServerAuthSession } from "codesage/server/auth";
-import { prisma } from "codesage/server/db";
-
 /**
  * 1. CONTEXT
  *
@@ -22,6 +14,11 @@ import { prisma } from "codesage/server/db";
  *
  * These allow you to access things when processing a request, like the database, the session, etc.
  */
+import { type CreateNextContextOptions } from "@trpc/server/adapters/next";
+import { type Session } from "next-auth";
+
+// import { firestore } from "~/server/db";
+import { getServerAuthSession } from "../../server/auth";
 
 type CreateContextOptions = {
   session: Session | null;
@@ -35,12 +32,12 @@ type CreateContextOptions = {
  * - testing, so we don't have to mock Next.js' req/res
  * - tRPC's `createSSGHelpers`, where we don't have req/res
  *
- * @see https://create.t3.gg/en/usage/trpc#-serverapitrpcts
+ * @see https://create.t3.gg/en/usage/trpc#-servertrpccontextts
  */
 const createInnerTRPCContext = (opts: CreateContextOptions) => {
   return {
     session: opts.session,
-    prisma,
+    // firestore: firestore,
   };
 };
 
@@ -64,22 +61,15 @@ export const createTRPCContext = async (opts: CreateNextContextOptions) => {
 /**
  * 2. INITIALIZATION
  *
- * This is where the tRPC API is initialized, connecting the context and transformer. We also parse
- * ZodErrors so that you get typesafety on the frontend if your procedure fails due to validation
- * errors on the backend.
+ * This is where the tRPC API is initialized, connecting the context and transformer.
  */
+import { initTRPC, TRPCError } from "@trpc/server";
+import superjson from "superjson";
 
 const t = initTRPC.context<typeof createTRPCContext>().create({
   transformer: superjson,
-  errorFormatter({ shape, error }) {
-    return {
-      ...shape,
-      data: {
-        ...shape.data,
-        zodError:
-          error.cause instanceof ZodError ? error.cause.flatten() : null,
-      },
-    };
+  errorFormatter({ shape }) {
+    return shape;
   },
 });
 
