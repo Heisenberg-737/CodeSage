@@ -37,4 +37,24 @@ Startups often have limited resources and smaller teams, making efficient coding
   With more and more developers trying to ace their interviews by taking up coding courses or enrolling themselves in coding classes, the best of the classes would be those that provide instant feedback to ace their learning. CodeSage can offer real-time code output and error feedback, allowing instructors to provide immediate guidance and support to students. By highlighting errors and suggesting improvements, CodeSage can help students understand coding concepts more effectively and develop good programming practices. Moreover, features like code optimization suggestions can teach students how to write efficient code.
 
 
+# Problems with the existing solutions
+While editors that offer AI assistance to code have brought significant advancements to the development process, they still face certain challenges and limitations. Some problems with existing AI-assisted code editors include:
+
+* Accuracy and Reliability: AI models used in code editors may not always provide accurate suggestions or predictions. The quality of AI assistance heavily relies on the training data and the model's understanding of coding concepts. Inaccurate suggestions can lead to code errors or inefficiencies if blindly followed by developers.
+* Limited Context Awareness: AI models in code editors often lack a deep understanding of the overall project or the developer's specific intent. They may struggle to grasp the broader context in which the code is being written
+
+
+* Lack of Specificity: The answers provided by AI Chatbots are often generic and may not address the specific use case or problem at hand. Tailoring the responses to meet the specific requirements of interview preparation can be a limitation.
+
+
+* Context Dependency: Each time the user wants to utilize the AI Chatbot for interview preparation or debugging or optimizing, they need to provide the context. This requirement to repeatedly mention the context can be cumbersome and time-consuming.
+
+
+* Copy-pasting Inefficiency: Coding in a different editor, and coming to a different place to debug it or ask for assistance isn't the most optimal way for a firm. Having a smart editor with in-built compiler that can solve all your needs would be extremely time efficient.
+
+
+* Potential Distractions: AI Chatbots may divert the user's attention away from the code-editor, leading to distractions. The need to switch between different interfaces or platforms can disrupt the focus and flow of the preparation session.
+
+
+
 
