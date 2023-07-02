@@ -1,13 +1,13 @@
 import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { useState, useEffect, type FormEvent } from "react";
-import { UserCircleIcon, TrashIcon } from "@heroicons/react/solid";
+import { UserCircleIcon, TrashIcon } from "@heroicons/react/24/solid";
 import { env } from "../../env.mjs";
 import Typewriter from "typewriter-effect";
 import { Configuration, OpenAIApi } from "openai";
-import { XIcon } from "@heroicons/react/solid";
+import { XCircleIcon } from "@heroicons/react/24/solid";
 const configuration = new Configuration({
-  apiKey: env.NEXT_PUBLIC_OPENAI_API,
+  apiKey: process.env.NEXT_PUBLIC_OPENAI_API,
 });
 
 delete configuration.baseOptions.headers["User-Agent"];
@@ -36,9 +36,9 @@ export default function ChatGPT(props: {
             ? // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
               "The context for this conversation is as follows:" +
               "\nMy first prompt:" +
-              history.slice(-2)?.[0]?.[1] +
+              (history.slice(-2)?.[0]?.[1] || "") +
               "\n Your first response:" +
-              history.slice(-2)?.[1]?.[1] +
+              (history.slice(-2)?.[0]?.[1] || "") +
               "\n My new prompt:" +
               message +
               "\n Your new response:"
@@ -136,7 +136,7 @@ export default function ChatGPT(props: {
               onClick={() => props.setTranslate(!props.translate)}
               className="absolute right-4 h-8 w-8 "
             >
-              <XIcon />
+              <XCircleIcon />
             </button>
             <p className="mb-2 select-none text-2xl font-semibold text-gray-800 duration-150 dark:text-white">
               Got a Question?

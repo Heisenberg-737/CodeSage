@@ -19,7 +19,7 @@ import {
   TerminalIcon,
   CodeIcon,
   CheckIcon,
-} from "@heroicons/react/solid";
+} from "@heroicons/react/24/solid";
 
 export default function CodeEditor() {
   const [value, setValue] = useLocalStorage(

@@ -10,7 +10,7 @@ import Typewriter from "typewriter-effect";
 import { Configuration, OpenAIApi } from "openai";
 import { AdjustmentsHorizontalIcon } from "@heroicons/react/24/solid";
 const configuration = new Configuration({
-  apiKey: env.NEXT_PUBLIC_OPENAI_API,
+  apiKey: process.env.NEXT_PUBLIC_OPENAI_API,
 });
 // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
 delete configuration.baseOptions.headers["User-Agent"];
@@ -39,9 +39,9 @@ export default function Chat(props: { code: string }) {
               "\n My code: " +
               props.code +
               "\nMy first prompt:" +
-              history.slice(-2)?.[0]?.[1] +
+              history.slice(-2)?.[0]?.[1] || ""+
               "\n Your first response:" +
-              history.slice(-2)?.[1]?.[1] +
+              (history.slice(-2)?.[0]?.[1] || "") +
               "\n My new prompt:" +
               message +
               "\n Your new response:"
