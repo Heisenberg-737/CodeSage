@@ -1,4 +1,4 @@
-# CodeSage :heart:
+# CodeSage 💻:
 
 # Goal
 Significant reduction of coding and debugging time for developers, with the help of an  in-built editor and compile, that helps the developer to do the following:
