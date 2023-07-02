@@ -6,7 +6,7 @@ export default function Document() {
       <Head>
         <meta charSet="utf-8" />
 
-        <title>EditorGPT</title>
+        <title>CodeSage</title>
         <meta
           name="description"
           content="Combining a code editor with ChatGPT."
