@@ -1,4 +1,5 @@
 # CodeSage 💻:
+![c3](https://github.com/Heisenberg-737/CodeSage/assets/68119292/7ed6dbb8-b147-4128-9645-d41b084a4091)
 
 # Goal
 Significant reduction of coding and debugging time for developers, with the help of an  in-built editor and compile, that helps the developer to do the following:
