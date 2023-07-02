@@ -12,8 +12,8 @@ export default function Document() {
           content="Combining a code editor with ChatGPT."
         />
         <meta content="/favicon.ico" property="og:image" />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/favicon.ico" />
+        <link rel="icon" href="public/images/logo.png" />
+        <link rel="apple-touch-icon" href="public/images/logo.png" />
         {/*
             Notice the use of %PUBLIC_URL% in the tags above.
             It will be replaced with the URL of the `public` folder during the build.
