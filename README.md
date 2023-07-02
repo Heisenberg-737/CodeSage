@@ -55,7 +55,7 @@ While editors that offer AI assistance to code have brought significant advancem
 
 
 * Potential Distractions: AI Chatbots may divert the user's attention away from the code editor, leading to distractions. The need to switch between different interfaces or platforms can disrupt the focus and flow of the preparation session.
-* 
+
 
 # Our Solution
 * CodeSage was developed with the goal of providing developers with a seamless and efficient means of interacting with ChatGPT for real-time code analysis and feedback. The integration of a built-in editor and compiler empowers developers to not only view their code output but also identify any potential errors. Gone are the days of repetitively copying and pasting code into ChatGPT. Instead, users can simply compose a message within the integrated interface, which promptly transmits the query along with the accompanying code to ChatGPT. This streamlined approach ensures that developers receive tailored responses for their specific code inquiries without unnecessary hassle.
