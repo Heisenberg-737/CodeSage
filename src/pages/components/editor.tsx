@@ -72,21 +72,11 @@ export default function CodeEditor() {
       });
   };
 
-  // useEffect(() => {
-  //   setValue(
-  //     React.Children.map(children, (child) => {
-  //       return child.props.children;
-  //     }).join("\n")
-  //   );
-  // }, [children]);
-
   const handleEditorChange = (value) => {
     setValue(value);
   };
 
   const handleConsole = (log, index) => {
-    // if there is an error make the text red otherwise normal
-    //AND IF THE LOG CONTAINS "R342WT43WTG45" REMOVE IT
     return (
       <li
         key={index}
@@ -111,20 +101,6 @@ export default function CodeEditor() {
       </li>
     );
   };
-
-  // const runCode = () => {
-  //   try {
-  //     const fn = new Function(value);
-  //     console.log(fn);
-
-  //     const result = fn();
-  //     console.log(result);
-  //     setOutput(result.toString());
-  //   } catch (error) {
-  //     console.error(error);
-  //     setOutput(error.toString());
-  //   }
-  // };
 
   const editorRef = useRef(null);
 
@@ -249,19 +225,10 @@ export default function CodeEditor() {
                   readOnly: false,
                   cursorStyle: "line",
                   scrollbar: {
-                    // Subtle shadows to the left & top. Defaults to true.
                     useShadows: false,
-                    // Render vertical arrows. Defaults to false.
                     verticalHasArrows: true,
-                    // Render horizontal arrows. Defaults to false.
                     horizontalHasArrows: true,
-                    // Render vertical scrollbar.
-                    // Accepted values: 'auto', 'visible', 'hidden'.
-                    // Defaults to 'auto'
                     vertical: "visible",
-                    // Render horizontal scrollbar.
-                    // Accepted values: 'auto', 'visible', 'hidden'.
-                    // Defaults to 'auto'
                     horizontal: "visible",
                     verticalScrollbarSize: 17,
                     horizontalScrollbarSize: 17,
@@ -318,8 +285,6 @@ export default function CodeEditor() {
 }
 
 function useLocalStorage<T>(key: string, initialValue: T) {
-  // State to store our value
-  // Pass initial state function to useState so logic is only executed once
   const [storedValue, setStoredValue] = useState<T>(() => {
     if (typeof window === "undefined") {
       return initialValue;
@@ -335,8 +300,7 @@ function useLocalStorage<T>(key: string, initialValue: T) {
       return initialValue;
     }
   });
-  // Return a wrapped version of useState's setter function that ...
-  // ... persists the new value to localStorage.
+
   const setValue = (value: T | ((val: T) => T)) => {
     try {
       // Allow value to be a function so we have same API as useState
@@ -344,12 +308,10 @@ function useLocalStorage<T>(key: string, initialValue: T) {
         value instanceof Function ? value(storedValue) : value;
       // Save state
       setStoredValue(valueToStore);
-      // Save to local storage
       if (typeof window !== "undefined") {
         window.localStorage.setItem(key, JSON.stringify(valueToStore));
       }
     } catch (error) {
-      // A more advanced implementation would handle the error case
       console.log(error);
     }
   };

@@ -13,11 +13,8 @@ const configuration = new Configuration({
   apiKey: process.env.NEXT_PUBLIC_OPENAI_API,
 });
 
-// delete configuration.baseOptions.headers["User-Agent"];
-
 const openai = new OpenAIApi(configuration);
 
-// type Roles = "user" | "assistant" | "system";
 export default function ChatGPT(props: {
   setTranslate: any;
   translate: boolean;
@@ -216,13 +213,13 @@ export default function ChatGPT(props: {
             <input
               type="text"
               placeholder="Type a message..."
-              className="w-full rounded-xl border  border-gray-300 bg-gray-100 py-2 px-4 text-gray-900 duration-150 focus:outline-none  focus:ring-2 focus:ring-gpt dark:border-gray-700 dark:bg-gray-600 dark:text-gray-200"
+              className="w-full rounded-xl border  border-gray-300 bg-gray-100 px-4 py-2 text-gray-900 duration-150 focus:outline-none  focus:ring-2 focus:ring-gpt dark:border-gray-700 dark:bg-gray-600 dark:text-gray-200"
               value={query}
               onChange={(e) => handleQuery(e.target.value)}
             />
             <button
               type="submit"
-              className="ml-2 flex items-center rounded-xl bg-gptLight py-1 px-2 text-white duration-150 ease-in-out hover:bg-gpt dark:bg-gpt dark:hover:bg-gptDark "
+              className="ml-2 flex items-center rounded-xl bg-gptLight px-2 py-1 text-white duration-150 ease-in-out hover:bg-gpt dark:bg-gpt dark:hover:bg-gptDark "
             >
               <Image
                 src="/images/logo.svg"

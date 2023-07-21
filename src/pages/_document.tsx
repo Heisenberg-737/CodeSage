@@ -9,11 +9,12 @@ export default function Document() {
         <title>CodeSage</title>
         <meta
           name="description"
-          content="Combining a code editor with ChatGPT."
+          content="Do swift code analysis with CodeSage using ChatGPT" 
         />
-        <meta content="/favicon.ico" property="og:image" />
-        <link rel="icon" href="public/images/logo.png" />
-        <link rel="apple-touch-icon" href="public/images/logo.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta content="/favicon.ico" property="./logo.png" />
+        <link rel="icon" href="./logo.png" />
+        <link rel="apple-touch-icon" href="./logo.png" />
         {/*
             Notice the use of %PUBLIC_URL% in the tags above.
             It will be replaced with the URL of the `public` folder during the build.

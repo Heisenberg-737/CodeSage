@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { useState, useEffect, type FormEvent } from "react";
-// import { api } from "~/utils/api";
 import { UserCircleIcon, TrashIcon } from "@heroicons/react/24/solid";
 import { env } from "../../env.mjs";
 import Typewriter from "typewriter-effect";
@@ -17,24 +16,21 @@ delete configuration.baseOptions.headers["User-Agent"];
 
 const openai = new OpenAIApi(configuration);
 
-// type Roles = "user" | "assistant" | "system";
 export default function Chat(props: { code: string }) {
   const { data: session } = useSession();
   const [query, setQuery] = useState("");
   const [message, setMessage] = useState("");
   const [history, setHistory] = useState([] as string[][]);
 
-  //OpenAI integration
-  // const [roles, setRoles] = useState<Roles>("user");
   const [submit, setSubmit] = useState(false);
 
-  //request openai from api endpoint
+  // Request openai from api endpoint
   useEffect(() => {
     async function fetchData() {
       if (submit && message) {
         const context =
           history.length >= 2
-            ? // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
+            ?
               "The context for this conversation is as follows:" +
               "\n My code: " +
               props.code +
@@ -46,7 +42,6 @@ export default function Chat(props: { code: string }) {
               message +
               "\n Your new response:"
             : message + "\n My code: " + props.code;
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
         history.push([session?.user?.name || "Guest", message]);
         const completion = await openai.createChatCompletion({
           model: "gpt-3.5-turbo",
@@ -59,18 +54,15 @@ export default function Chat(props: { code: string }) {
         });
 
         setHistory(
-          // Replace the state
           [
-            // with a new array
-            ...history, // that contains all the old items
-            ["CodeSage", completion?.data?.choices[0]?.message?.content || ""], // and one new item at the end
+            ...history,
+            ["CodeSage", completion?.data?.choices[0]?.message?.content || ""], 
           ]
         );
       }
     }
     void fetchData();
     setSubmit(false);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [submit]);
 
   const handleQuery = (text: string) => {
@@ -274,13 +266,13 @@ export default function Chat(props: { code: string }) {
               <input
                 type="text"
                 placeholder="Type a message..."
-                className="w-full rounded-lg border  border-gray-300 bg-gray-100 py-1 px-4 text-gray-900 duration-150 focus:outline-none  focus:ring-2 focus:ring-gpt dark:border-gray-700 dark:bg-gray-600 dark:text-gray-200"
+                className="w-full rounded-lg border  border-gray-300 bg-gray-100 px-4 py-1 text-gray-900 duration-150 focus:outline-none  focus:ring-2 focus:ring-gpt dark:border-gray-700 dark:bg-gray-600 dark:text-gray-200"
                 value={query}
                 onChange={(e) => handleQuery(e.target.value)}
               />
               <button
                 type="submit"
-                className="ml-2 flex items-center rounded-lg bg-gptLight py-1 px-2 text-white duration-150 ease-in-out hover:bg-gpt dark:bg-gpt dark:hover:bg-gptDark "
+                className="ml-2 flex items-center rounded-lg bg-gptLight px-2 py-1 text-white duration-150 ease-in-out hover:bg-gpt dark:bg-gpt dark:hover:bg-gptDark "
               >
                 <Image
                   src="/images/logo.svg"
