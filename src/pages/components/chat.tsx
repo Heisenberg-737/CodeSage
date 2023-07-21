@@ -197,63 +197,85 @@ export default function Chat(props: { code: string }) {
               ) : (
                 <div className="grid h-full grid-cols-3 gap-3 pb-3">
                   <button
-                    onClick={() => setButtonSubmission("What does my code do?")}
+                    onClick={() => setButtonSubmission("Explain my code.")}
                     className="rounded-lg bg-gray-100 p-2 duration-150 hover:bg-gray-50 dark:bg-gray-800 hover:dark:bg-gray-900"
                   >
-                    What does my code do?
+                    Explain my code.
+                  </button>
+                  <button
+                    onClick={() => setButtonSubmission("Is my code well-organized and easy to navigate?")}
+                    className="rounded-lg bg-gray-100 p-2 duration-150 hover:bg-gray-50 dark:bg-gray-800 hover:dark:bg-gray-900"
+                  >
+                    Is my code well-organized and easy to navigate?
+                  </button>
+                  <button
+                    onClick={() => setButtonSubmission("What is the time complexity of critical functions or algorithms in my code?")}
+                    className="rounded-lg bg-gray-100 p-2 duration-150 hover:bg-gray-50 dark:bg-gray-800 hover:dark:bg-gray-900"
+                  >
+                    What is the time complexity of my code?
                   </button>
                   <button
                     onClick={() =>
                       setButtonSubmission(
-                        "How can my code be improved or optimized?"
+                        "Are there potential edge cases that my code doesnt handle properly? "
                       )
                     }
                     className="rounded-lg bg-gray-100 p-2 duration-150 hover:bg-gray-50 dark:bg-gray-800 hover:dark:bg-gray-900"
                   >
-                    How can my code be improved or optimized?
+                    Are there potential edge cases that my code doesnt handle properly?
+                  </button>
+
+                  <button
+                    onClick={() =>
+                      setButtonSubmission(
+                        "How can I reduce the space complexity of my code?"
+                      )
+                    }
+                    className="rounded-lg bg-gray-100 p-2 duration-150 hover:bg-gray-50 dark:bg-gray-800 hover:dark:bg-gray-900"
+                  >
+                    How can I reduce the space complexity of my code?
                   </button>
                   <button
                     onClick={() =>
                       setButtonSubmission(
-                        "How efficient or scalable is my code?"
+                        "Is my code scalable?"
                       )
                     }
                     className="rounded-lg bg-gray-100 p-2 duration-150 hover:bg-gray-50 dark:bg-gray-800 hover:dark:bg-gray-900"
                   >
-                    How efficient or scalable is my code?
+                    Is my code scalable?
                   </button>
                   <button
                     onClick={() =>
                       setButtonSubmission(
-                        "What potential security vulnerabilities might exist in my code? "
+                        "Are there any potential security vulnerabilities in my code? "
                       )
                     }
                     className="rounded-lg bg-gray-100 p-2 duration-150 hover:bg-gray-50 dark:bg-gray-800 hover:dark:bg-gray-900"
                   >
-                    What potential security vulnerabilities might exist in my
-                    code?
+                    Are there any potential security vulnerabilities in my code?
                   </button>
                   <button
                     onClick={() =>
                       setButtonSubmission(
-                        "What are some alternative ways to achieve the same functionality as my code? "
+                        "How robust is my code when handling unexpected inputs or errors? "
                       )
                     }
                     className="rounded-lg bg-gray-100 p-2 duration-150 hover:bg-gray-50 dark:bg-gray-800 hover:dark:bg-gray-900"
                   >
-                    What are some alternative ways to achieve the same
-                    functionality as my code?
+                    How robust is my code when handling unexpected inputs or errors?
                   </button>
                   <button
                     onClick={() =>
                       setButtonSubmission(
-                        "What is the overall complexity and quality of my code? "
+                        "Suggest few alternative ways to achieve the same functionality as my code. "
                       )
                     }
                     className="rounded-lg bg-gray-100 p-2 duration-150 hover:bg-gray-50 dark:bg-gray-800 hover:dark:bg-gray-900"
                   >
-                    What is the overall complexity and quality of my code?
+                    Suggest few alternative ways to achieve the same functionality as my code.
                   </button>
+                  
                 </div>
               )}
             </div>
