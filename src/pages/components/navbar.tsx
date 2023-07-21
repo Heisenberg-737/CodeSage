@@ -5,9 +5,9 @@ import { useState, useEffect } from "react";
 import {
   SunIcon,
   MoonIcon,
-  LockClosedIcon,
-  LockOpenIcon,
   UserCircleIcon,
+  UserMinusIcon,
+  UserPlusIcon
 } from "@heroicons/react/24/solid";
 
 const Navbar = (props: {
@@ -64,7 +64,7 @@ const Navbar = (props: {
             width={400}
           />
           <h1 className="relative hidden select-none text-2xl font-extrabold tracking-tight duration-75 dark:text-white sm:inline lg:text-4xl 2xl:text-[3rem]">
-            <span className="dark:text-gpt">{"CodeSage"}</span>
+            <span className="dark:text-gpt TitleNavBar">{"CodeSage"}</span>
           </h1>
         </div>
         <div className="ml-auto flex ">
@@ -91,9 +91,9 @@ const Navbar = (props: {
             onClick={session ? () => void signOut() : () => void signIn()}
           >
             {session ? (
-              <LockOpenIcon className="h-8 w-8" />
+              <UserMinusIcon className="h-8 w-8" />
             ) : (
-              <LockClosedIcon className="h-8 w-8" />
+              <UserPlusIcon className="h-8 w-8" />
             )}
           </button>
 

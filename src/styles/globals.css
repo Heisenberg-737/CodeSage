@@ -6,6 +6,10 @@
   text-shadow: 2px 2px #63b55a;
 }
 
+.TitleNavBar {
+  font-size: 2rem;
+}
+
 @layer utilities {
   .scrollbar::-webkit-scrollbar {
     width: 5px;

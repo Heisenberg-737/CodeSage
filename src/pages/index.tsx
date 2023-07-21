@@ -2,7 +2,7 @@
 import { type NextPage } from "next";
 import { useState } from "react";
 // import { api } from "~/utils/api";
-import { HeartIcon } from "@heroicons/react/24/outline";
+import { ChatBubbleOvalLeftEllipsisIcon } from "@heroicons/react/24/outline";
 import Navbar from "./components/navbar";
 import Chat from "./components/chatgpt";
 import Editor from "./components/editor";
@@ -64,7 +64,7 @@ const Home: NextPage = () => {
           className="absolute bottom-4 right-4 z-20 rounded-2xl bg-gptDark p-2 text-white shadow-lg  duration-150 hover:bg-gptDarker"
           onClick={() => menuHandler()}
         >
-          <HeartIcon className="h-12 w-12" />
+          <ChatBubbleOvalLeftEllipsisIcon className="h-12 w-12" />
         </button>
         <Chat translate={translate} setTranslate={setTranslate} />
         <div className="min-h-[calc(100vh-3.6rem)] overflow-hidden bg-gradient-to-b  from-gray-100 to-gray-200 duration-150 dark:from-gray-800 dark:to-gray-900 sm:max-h-[calc(100vh-3.6rem)] ">
