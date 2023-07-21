@@ -1,5 +1,6 @@
-# CodeSage 💻:
-![c3](https://github.com/Heisenberg-737/CodeSage/assets/68119292/7ed6dbb8-b147-4128-9645-d41b084a4091)
+# CodeSage 💻
+![Screenshot 2023-07-21 at 4 41 28 PM](https://github.com/Heisenberg-737/CodeSage/assets/55024919/31ed3475-9cb5-4eed-b4dd-84a00575dda5)
+
 
 # Goal 🎯
 Significant reduction of coding and debugging time for developers, with the help of an  in-built editor and compile, that helps the developer to do the following:
@@ -12,7 +13,7 @@ Significant reduction of coding and debugging time for developers, with the help
 * Judge the quality and complexity of the code.<br/>
 
 
-# Business Model
+# Business Model 💰
 Despite the ongoing recession, the software industry is expected to grow by 31% globally in the coming years. This growth is accompanied by a significant number of aspiring developers aiming to secure positions in top tech companies. Here are some key metrics that highlight the scope and magnitude of the software industry:
 
 ### Market Size: 
@@ -77,12 +78,12 @@ CodeSage was built using T3, Next, Next-Auth, React, and Tailwind, and was writt
 
 ### Deployed App Link: https://code-sage-navy.vercel.app/
 
-# Challenges we ran into:
+# Challenges we ran into 😥
 
 * The project's main challenges were getting the Editor and compiler to function properly and creating a memory system for ChatGPT. Initially, we had planned to integrate a template code editor and focus on implementing ChatGPT. However, we soon realized that the packages and libraries we found on npm for the editor and compiler were outdated and unsuitable for this project. Despite searching for alternative combinations, none met the requirements. Consequently, we had to build a do-it-yourself (DIY) code editor from scratch, utilizing various libraries like Monaco for the VSCode aesthetic and Node VM and Skulpt for compiling.
 * Dealing with ChatGPT initially proved frustrating due to its limitations, particularly in handling conversations. To overcome this, we devised a novel memory system that incorporated the user's previous messages and the bot's responses. This contextual information was then sent as a new query, referred to as "context," to ChatGPT. Surprisingly, the system worked flawlessly, enabling the bot to understand the context's intention. Overcoming these challenges proved to be both a significant hurdle and a notable accomplishment in the project.
 
-# Accomplishments we are proud of: 📈
+# Accomplishments we are proud of 📈
 
 * The editor surpassed our expectations and demonstrated impressive capabilities. An interesting incident occurred while working with JavaScript, where we entered the code "alert("hello world")" just for fun. To our surprise, when we executed the code, an alert actually popped up in the centre of our application. This unexpected functionality highlighted that our code editor not only possessed this feature but also had an advantage over other editors, which typically require deploying a complete HTML webpage to observe JavaScript interactions in action.
 * Apart from this delightful discovery, we take immense pride in the seamless functionality of the entire application. Despite the considerable time investment and the challenges of troubleshooting, the app operates exceptionally smoothly. Code compilation occurs within split seconds, and ChatGPT delivers responses in mere seconds as well.
