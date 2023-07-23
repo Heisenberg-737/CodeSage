@@ -106,7 +106,7 @@ In conclusion, we envision CodeSage becoming a valuable asset in every developer
   * GOOGLE_CLIENT_SECRET=""
   * NEXT_PUBLIC_OPENAI_API=""
 * Run the command npm run build && npm run lint to build the project
-* Execute the command npm run start the run the project on localhost
+* Execute the command npm run start to run the project on localhost
 
   
 
