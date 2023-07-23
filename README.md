@@ -46,7 +46,7 @@ While editors that offer AI assistance to code have brought significant advancem
 * Limited Context Awareness: AI models in code editors often lack a deep understanding of the overall project or the developer's specific intent. They may struggle to grasp the broader context in which the code is being written
 
 
-* Lack of Specificity: The answers provided by AI Chatbots are often generic and may not address the specific use case or problem at hand. Tailoring the responses to meet the specific requirements of interview preparation can be a limitation.
+* Lack of Specificity: The answers provided by Chatbots are often generic and may not address the specific use case or problem at hand. Tailoring the responses to meet the specific requirements of interview preparation can be a limitation.
 
 
 * Context Dependency: Each time the user wants to utilize the AI Chatbot for interview preparation or debugging or optimizing, they need to provide the context. This requirement to repeatedly mention the context can be cumbersome and time-consuming.
