@@ -94,6 +94,20 @@ CodeSage currently has the capability to generate code output in a console. Howe
 
 In conclusion, we envision CodeSage becoming a valuable asset in every developer's toolkit. Thank you for taking the time to read this!
 
+# Instructions to run this 🛠️
+
+* Clone this repository onto your local system & make sure your system has latest versions of Node & NPM
+* In the root directory, run the command npm install to install all the dependencies
+* Add an .env file in your root directory which has following keys:
+  * NEXTAUTH_SECRET=""
+  * DISCORD_CLIENT_ID=""
+  * DISCORD_CLIENT_SECRET=""
+  * GOOGLE_CLIENT_ID=""
+  * GOOGLE_CLIENT_SECRET=""
+  * NEXT_PUBLIC_OPENAI_API=""
+* Run the command npm run build && npm run lint to build the project
+* Execute the command npm run start the run the project on localhost
+
   
 
 
